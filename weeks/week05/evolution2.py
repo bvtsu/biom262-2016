@@ -55,9 +55,9 @@ def breed(parent, num, mutation_rate):
 def evolve(target, num=1000, mutation_rate=0.75, generation=0):
     """Evolves random sequences towards seed, using ALPHABET."""
     population = initialize(target, num)
-    #target = target.replace(" ", ", ")
+    #target = target.replace(" ", ",")
     #module_string = target.lower().split(',')
-    module_string = target.lower().split()
+    module_string = target.lower().split() #Problem: in is only indexed once.
     for item in module_string:
         m_dict[item] = target.find(item)
     print(m_dict)
